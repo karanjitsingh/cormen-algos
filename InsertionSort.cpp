@@ -1,7 +1,7 @@
 /*
 
 Algorithm: Insertion Sort
-Section 2.1, PAge 18
+Section 2.1, Page 18
 
 */
 
