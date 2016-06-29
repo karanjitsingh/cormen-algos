@@ -1,7 +1,7 @@
 /*
 
-Algorithm: Insertion Sort
-Section 2.1, Page 18
+Algorithm: Bubble Sort
+Section 2.1, Page 38
 
 */
 
@@ -21,16 +21,15 @@ int main() {
 
 
 	//Sort
-	for(int j=1;j<n;j++)
-	{
-		int key = A[j];
-		int i = j-1;
-		while(i > -1 && A[i] > key)
-		{
-			A[i+1] = A[i];
-			i=i-1;
+	for(int i=0; i<n; i++) {
+		for(int j=n-1; j>i; j--) {
+			if(A[j] < A[j-1])
+			{
+				int x = A[j];
+				A[j] = A[j-1];
+				A[j-1] = x;
+			}
 		}
-		A[i+1] = key;
 	}
 
 
