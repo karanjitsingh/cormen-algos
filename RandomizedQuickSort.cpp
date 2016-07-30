@@ -1,11 +1,13 @@
 /*
 
-Algorithm: Quick Sort
-Section 7.1, Page 146
+Algorithm: Randomized version of Quick Sort
+Section 7.3, Page 154
 
 */
 
+#include <cstdlib>
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -28,6 +30,15 @@ int Partition(int * A,int p,int r) {
 	return i+1;
 }
 
+int RandomizedPartition(int * A, int p, int r) {
+	int i = rand()%(r-p+1) + p;
+	int temp = A[r];
+	A[r] = A[i];
+	A[i] = temp;
+	return Partition(A,p,r);
+
+}
+
 void QuickSort(int * A, int p, int r)
 {
 	if(p<r) {
@@ -37,7 +48,17 @@ void QuickSort(int * A, int p, int r)
 	}
 }
 
+void RandomizedQuickSort(int * A, int p, int r)
+{
+	if(p<r) {
+		int q = RandomizedPartition(A,p,r);
+		RandomizedQuickSort(A,p,q-1);
+		RandomizedQuickSort(A,q+1,r);
+	}
+}
+
 int main() {
+	srand(time(0));
 
 	int n; int *A;
 	cin >> n;
@@ -48,7 +69,7 @@ int main() {
 		cin >> A[i];
 
 	//QuickSort
-	QuickSort(A,0,n-1);
+	RandomizedQuickSort(A,0,n-1);
 
 	//Print
 	for(int i=0;i<n;i++)
