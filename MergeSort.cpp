@@ -1,7 +1,7 @@
 /*
 
 Algorithm: Merge Sort
-Section 2.1, Page 29 and 32
+Section 2.3.1, Page 29 and 32
 
 */
 

@@ -1,7 +1,7 @@
 /*
 
 Algorithm: Bubble Sort
-Section 2.1, Page 38
+Problems, Page 38
 
 */
 
